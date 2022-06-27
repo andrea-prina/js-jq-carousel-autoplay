@@ -39,10 +39,6 @@ for (let i = 0; i < images.length; i++){
 }
 
 
-
-
-
-
 // Initialize the index and the buttons
 
 let activeImageIndex = 0;
@@ -51,8 +47,13 @@ const thumbList = carouselThumbnail.children;
 const nextButton = document.getElementById("button-next");
 const prevButton = document.getElementById("button-prev");
 
-nextButton.addEventListener("click", function(){
-    
+nextButton.addEventListener("click", goToNextImage);
+
+prevButton.addEventListener("click", goToPreviousImage);
+
+
+function goToNextImage(){
+
     // Remove the "active" class from the current image. Do the same to the thumbnail element
     imageList[activeImageIndex].classList.remove("active");
     thumbList[activeImageIndex].classList.remove("active");
@@ -66,9 +67,10 @@ nextButton.addEventListener("click", function(){
     imageList[activeImageIndex].classList.add("active");
     thumbList[activeImageIndex].classList.add("active");
 
-})
+}
 
-prevButton.addEventListener("click", function(){
+function goToPreviousImage(){
+
     // Remove the "active" class from the current image. Do the same to the thumbnail element
     imageList[activeImageIndex].classList.remove("active");
     thumbList[activeImageIndex].classList.remove("active");
@@ -82,7 +84,6 @@ prevButton.addEventListener("click", function(){
     // Add the "active" class to the previous image. Do the same to the thumbnail element
     imageList[activeImageIndex].classList.add("active");
     thumbList[activeImageIndex].classList.add("active");
-})
-
+}
 
 
