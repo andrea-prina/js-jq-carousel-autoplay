@@ -87,3 +87,6 @@ function goToPreviousImage(){
 }
 
 
+const clock = setInterval(goToNextImage, 3000);
+
+
